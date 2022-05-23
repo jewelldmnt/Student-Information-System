@@ -33,7 +33,7 @@ class MainFrame(Tk):
             frame.grid(row=0, column=0, sticky="NSEW")
             self.frames[page_name] = frame
 
-        self.show_frame("AdminMenu")
+        self.show_frame("HomePage")
 
     # showing the current frame above everything
     def show_frame(self, page_name, id=None):
