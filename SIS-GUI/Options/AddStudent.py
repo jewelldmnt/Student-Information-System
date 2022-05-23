@@ -20,6 +20,10 @@ class AddStudent(Frame):
         self.response = Label(canvas, text="", anchor="nw", bg="#093545", font=("LexendDeca Regular", 16 * -1))
         self.response.place(x=0, y=0)
 
+        # creating the bottom image for design
+        self.curvy = PhotoImage(file=self.relative_to_assets("curvy.png"))
+        canvas.create_image(347.0, 664.0, image=self.curvy)
+
         # creating add student label
         canvas.create_text(395.0, 35.0, anchor="nw", text="Add student", fill="#FFFFFF", font=("LexendDeca Light", 36 * -1))
 

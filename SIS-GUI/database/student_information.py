@@ -17,5 +17,3 @@ def student_information(student_number):
                 break  # to exit for-loop in line 10 if student is already found
 
         return student_information
-
-
