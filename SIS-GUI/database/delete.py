@@ -14,5 +14,5 @@ def delete():
     # rewrite the file without the skipped student
     with open(student_database, "w") as file:
         for line in data_list:
-            if search.student_info[0] != line[0]:
+            if not line.startswith(search.student_info[0]):
                 file.write(f"{line.strip()}\n")
