@@ -85,9 +85,7 @@ class AdminMenu(Frame):
         self.imgStudents = PhotoImage(file=self.relative_to_assets("imgStudents.png"))
         self.canvas.create_image(1085.0, 509.0, image=self.imgStudents)
 
-    # for the path to be right
-    def relative_to_assets(self, path: str) -> Path:
-        return self.ASSETS_PATH / Path(path)
+    # --------------- Methods --------------- #
 
     # creating frames for all options and rooting them in the main container
     def create_frames(self):
@@ -107,6 +105,9 @@ class AdminMenu(Frame):
 
     # showing the called frame on top of everything
     def show_option(self, frame_name, button, image):
+        if frame_name == "ViewStudent":
+            view.ViewStudent.view_information(self.frames[frame_name])
+
         self.button_clicked(frame_name, button, image)
         self.container.tkraise()
         self.frames[frame_name].tkraise()
@@ -136,3 +137,6 @@ class AdminMenu(Frame):
         if self.current_btn != None and self.current_img != None:
             self.current_btn.configure(image=self.current_img)
         
+    # for the path to be right
+    def relative_to_assets(self, path: str) -> Path:
+        return self.ASSETS_PATH / Path(path)

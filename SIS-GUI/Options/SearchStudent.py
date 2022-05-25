@@ -19,7 +19,7 @@ class SearchStudent(Frame):
         self.curvy = PhotoImage(file=self.relative_to_assets("curvy.png"))
         canvas.create_image(347.0, 664.0, image=self.curvy)
 
-        # creating the delete student label
+        # creating the search student label
         canvas.create_text(330.0, 40.0, text="SEARCH STUDENT", anchor="nw", fill="#FFFFFF", font=("LexendDeca Bold", 36 * -1, "underline"))
 
         # creating search bar label

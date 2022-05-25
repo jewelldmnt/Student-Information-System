@@ -1,5 +1,4 @@
 # DATABASE TO DELETE STUDENTS
-import csv
 from database import search
 
 # no return statement, just command
@@ -8,11 +7,11 @@ def delete():
     data_list = []
 
     # read file and store it in a list
-    with open(student_database, "r", newline="") as file:
+    with open(student_database, "r") as file:
         data_list = file.readlines()
 
     # rewrite the file without the skipped student
     with open(student_database, "w") as file:
         for line in data_list:
-            if search.student_info[0] != line[0]:
+            if not line.startswith(search.student_info[0]):
                 file.write(f"{line.strip()}\n")
