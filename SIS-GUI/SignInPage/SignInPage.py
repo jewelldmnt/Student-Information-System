@@ -92,8 +92,8 @@ class SignInPage(Frame):
                 self.response.place_configure(x=560, y=286)
             # Incorrect email or password!
             else:
-                self.response.configure(text="Incorrect email or password!", fg="#E7A90A")
-                self.response.place_configure(x=545, y=286)
+                self.response.configure(text="Incorrect password!", fg="#E7A90A")
+                self.response.place_configure(x=577, y=286)
 
         # for admin
         else:
@@ -110,8 +110,8 @@ class SignInPage(Frame):
                 self.response.place_configure(x=560, y=286)
             # Incorrect email or password!
             else:
-                self.response.configure(text="Incorrect email or password!", fg="#E7A90A")
-                self.response.place_configure(x=545, y=286)
+                self.response.configure(text="Incorrect password!", fg="#E7A90A")
+                self.response.place_configure(x=577, y=286)
 
 
     # clearing entry inputs
