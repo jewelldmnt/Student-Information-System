@@ -43,7 +43,7 @@ class ViewStudent(Frame):
 
         # creating the canvas for the scrollbar
         self.in_canvas = Canvas(self.main_frame, width=835, height=538, bg="#093545")
-        self.in_canvas.pack(side=LEFT, fill=BOTH, expand=True)
+        self.in_canvas.pack(side=LEFT, fill=BOTH, expand=True, ipadx=2)
 
         # making the scrollbar of the canvas
         self.scrollbar = ttk.Scrollbar(self.main_frame, orient=VERTICAL, command=self.in_canvas.yview)
