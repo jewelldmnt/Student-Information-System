@@ -120,6 +120,9 @@ class AdminMenu(Frame):
             frame = self.frames[page]
             frame.response.place_forget()
 
+            if page == "UpdateStudent":
+                frame.entrySearch.delete(0, END)
+
             if page != "AddStudent":
                 frame.hide_frame()
 

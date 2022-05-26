@@ -40,8 +40,7 @@ class UpdateStudent(Frame):
 
         # creating search button
         self.imgSearch3 = PhotoImage(file=self.relative_to_assets("btnSearch.png"))
-        btnSearch = Button(self, image=self.imgSearch3, borderwidth=0, highlightthickness=0,
-                           command=self.search_student, relief="flat")
+        btnSearch = Button(self, image=self.imgSearch3, borderwidth=0, highlightthickness=0, command=self.search_student, relief="flat")
         btnSearch.place(x=590.0, y=132.0, width=94.0, height=38.0)
 
         # creating error message label
@@ -144,7 +143,7 @@ class UpdateStudent(Frame):
 
         # creating no button
         self.imgNo = PhotoImage(file=self.relative_to_assets("btnNo.png"))
-        self.btnNo = Button(self.frame, image=self.imgNo, borderwidth=0, highlightthickness=0, command=self.hide_frame, relief="flat")
+        self.btnNo = Button(self.frame, image=self.imgNo, borderwidth=0, highlightthickness=0, command=self.enter_again, relief="flat")
 
 
     # --------------- Methods --------------- #
@@ -160,7 +159,6 @@ class UpdateStudent(Frame):
             self.response.place(x=345.0, y=180.0)
             self.frame.place_forget()
             self.lblInfo.place_forget()
-        self.entrySearch.delete(0, END)
 
 
     # update student
@@ -168,6 +166,14 @@ class UpdateStudent(Frame):
         update.update_student(self.info_index, self.new_info.get())
         self.entryChangeInto.delete(0, END)
         self.hide_frame()
+        self.search_student()
+
+
+    # user clicked no, go back to changing what info again
+    def enter_again(self):
+        self.entryChangeInto.delete(0, END)
+        self.hide_frame()
+        self.search_student()
 
 
     # show ChangeInto buttons and entry box
