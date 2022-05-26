@@ -1,12 +1,14 @@
 from tkinter import *
 from pathlib import Path
-from database import delete
+from Database import delete
 from Options import SearchStudent as ss
+
 
 class DeleteStudent(Frame):
     #constants
     OUTPUT_PATH = Path(__file__).parent
     ASSETS_PATH = OUTPUT_PATH / Path("./assets")
+
 
     # delete student init method
     def __init__(self, parent):
@@ -29,7 +31,7 @@ class DeleteStudent(Frame):
         # creating search bar entry
         self.imgSearch1 = PhotoImage(file=self.relative_to_assets("entry_search.png"))
         canvas.create_image(431.0, 169.5, image=self.imgSearch1)
-        self.entrySearch = Entry(self, bd=0, bg="#224957", highlightthickness=0)
+        self.entrySearch = Entry(self, bd=0, bg="#224957", highlightthickness=0, fg="silver", insertbackground="silver", font=("LexendDeca Regular", 14 * -1))
         self.entrySearch.place(x=291.0, y=150.0, width=240.0, height=43.0)
 
         # creating search icon image
@@ -38,12 +40,11 @@ class DeleteStudent(Frame):
 
         # creating search button
         self.imgSearch2 = PhotoImage(file=self.relative_to_assets("btnSearch.png"))
-        btnSearch = Button(self, image=self.imgSearch2, borderwidth=0, highlightthickness=0,
-                        command=self.search_student, relief="flat")
+        btnSearch = Button(self, image=self.imgSearch2, borderwidth=0, highlightthickness=0, command=self.search_student, relief="flat")
         btnSearch.place(x=590.0, y=152.0, width=94.0, height=38.0)
 
         # creating error message label
-        self.errorMsg = Label(canvas, text="Student number not found.", anchor="nw", bg="#093545", fg="#F04C41", font=("LexendDeca Regular", 14 * -1))
+        self.response = Label(canvas, text="Student number not found.", anchor="nw", bg="#093545", fg="#F04C41", font=("LexendDeca Regular", 14 * -1))
 
         # ----------------------------- creation of table part ------------------------------------------------ # 
 
@@ -96,15 +97,14 @@ class DeleteStudent(Frame):
 
         # creating yes button
         self.imgYes = PhotoImage(file=self.relative_to_assets("btnYes.png"))
-        btnYes = Button(self.frame, image=self.imgYes, borderwidth=0, highlightthickness=0,
-                        command=self.delete_student, relief="flat")
+        btnYes = Button(self.frame, image=self.imgYes, borderwidth=0, highlightthickness=0, command=self.delete_student, relief="flat")
         btnYes.place(x=625.0, y=280.0, width=84.0, height=30.0)
 
         # creating no button
         self.imgNo = PhotoImage(file=self.relative_to_assets("btnNo.png"))
-        btnNo = Button(self.frame, image=self.imgNo, borderwidth=0, highlightthickness=0,
-                        command=self.hide_frame, relief="flat")
+        btnNo = Button(self.frame, image=self.imgNo, borderwidth=0, highlightthickness=0, command=self.hide_frame, relief="flat")
         btnNo.place(x=720.0, y=280.0, width=84.0, height=30.0)
+
 
     # --------------- Methods --------------- #
 
@@ -112,15 +112,18 @@ class DeleteStudent(Frame):
     def search_student(self):
         ss.SearchStudent.student_search(self)
 
+
     # delete student
     def delete_student(self):
-        delete.delete()
+        delete.delete_student()
         self.entrySearch.delete(0, END)
         self.hide_frame()
+
 
     # hide frame
     def hide_frame(self):
         self.frame.place_forget()
+
 
     # for the path to be right
     def relative_to_assets(self, path: str) -> Path:

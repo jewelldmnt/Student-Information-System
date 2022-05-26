@@ -22,7 +22,6 @@ class MainFrame(Tk):
 
         # creating a dictionary of page objects and id for menu
         self.frames = {}
-        self.id = None
 
         # looping in every page/class and creating an object of it
         # then storing the class name as the key 

@@ -1,12 +1,14 @@
 from tkinter import *
 from tkinter import ttk
 from pathlib import Path
-from database import view
+from Database import view
+
 
 class ViewStudent(Frame):
     # constants
     OUTPUT_PATH = Path(__file__).parent
     ASSETS_PATH = OUTPUT_PATH / Path("./assets")
+
 
     # view student init method
     def __init__(self, parent):
@@ -30,6 +32,7 @@ class ViewStudent(Frame):
         self.lblTotal = Label(self.canvas, bg="#27595E", anchor="nw", fg="#FFFFFF", font=("LexendDeca Bold", 16 * -1))
         self.lblTotal.place(x=605.0, y=688.0)
         
+
     # creation of the table of student information
     def view_information(self):
         total_students = view.number_of_students()
@@ -70,6 +73,7 @@ class ViewStudent(Frame):
 
         # display total number of students
         self.lblTotal.configure(text=f"TOTAL NUMBER OF STUDENTS: {total_students}")
+
 
     # for the path to be right
     def relative_to_assets(self, path: str) -> Path:

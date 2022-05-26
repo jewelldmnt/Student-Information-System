@@ -31,6 +31,7 @@ def display_students(parent):
             y_stn += 184
             y_data += 34
 
+
 # get number of students
 def number_of_students():
     global student_database

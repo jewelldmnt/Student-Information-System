@@ -13,7 +13,8 @@ def signup(filename, email, pwd, confirm_pwd):
 
     # The email already exist!
     for line in file:
-        if line.startswith(email):
+        em, pw = line.split(", ")
+        if em == email:
             return 3
 
     # You have registered successfully!

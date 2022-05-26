@@ -1,11 +1,13 @@
 from tkinter import *
 from pathlib import Path
-from database import search
+from Database import search
+
 
 class SearchStudent(Frame):
     # constants
     OUTPUT_PATH = Path(__file__).parent
     ASSETS_PATH = OUTPUT_PATH / Path("./assets")
+    
     
     # search student init method
     def __init__(self, parent):
@@ -28,7 +30,7 @@ class SearchStudent(Frame):
         # creating search bar entry
         self.imgSearch1 = PhotoImage(file=self.relative_to_assets("entry_search.png"))
         canvas.create_image(431.0, 169.5, image=self.imgSearch1)
-        self.entrySearch = Entry(self, bd=0, bg="#224957", highlightthickness=0)
+        self.entrySearch = Entry(self, bd=0, bg="#224957", highlightthickness=0, fg="silver", insertbackground="silver", font=("LexendDeca Regular", 14 * -1))
         self.entrySearch.place(x=291.0, y=150.0, width=240.0, height=43.0)
 
         # creating search icon image
@@ -37,12 +39,11 @@ class SearchStudent(Frame):
 
         # creating search button
         self.imgSearch2 = PhotoImage(file=self.relative_to_assets("btnSearch.png"))
-        btnSearch = Button(self, image=self.imgSearch2, borderwidth=0, highlightthickness=0,
-                        command=self.student_search, relief="flat")
+        btnSearch = Button(self, image=self.imgSearch2, borderwidth=0, highlightthickness=0, command=self.student_search, relief="flat")
         btnSearch.place(x=590.0, y=152.0, width=94.0, height=38.0)
 
         # creating error message label
-        self.errorMsg = Label(canvas, text="Student number not found.", anchor="nw", bg="#093545", fg="#F04C41", font=("LexendDeca Regular", 14 * -1))
+        self.response = Label(canvas, text="Student number not found.", anchor="nw", bg="#093545", fg="#F04C41", font=("LexendDeca Regular", 14 * -1))
 
         # ----------------------------- creation of table part ------------------------------------------------ #
 
@@ -88,19 +89,26 @@ class SearchStudent(Frame):
         # store list of all labels
         self.labels = [lblStNo, lblLN, lblFN, lblMN, lblEmail, lblContact]
 
+
     # --------------- Methods --------------- #
 
     # for the path to be right
     def relative_to_assets(self, path: str) -> Path:
         return self.ASSETS_PATH / Path(path)
 
+
     # searching for student
     def student_search(self):
-        if search.search(self.entrySearch.get()):
-            self.errorMsg.place_forget()
+        if search.student_found(self.entrySearch.get()):
+            self.response.place_forget()
             self.frame.place(x=78, y=227)
             search.show_results(self)
         else:
-            self.errorMsg.place(x=345.0, y=202.0)
+            self.response.place(x=345.0, y=202.0)
             self.frame.place_forget()
         self.entrySearch.delete(0, END)
+
+
+    # hide frame
+    def hide_frame(self):
+        self.frame.place_forget()

@@ -1,8 +1,8 @@
 # DATABASE TO DELETE STUDENTS
-from database import search
+from Database import search
 
 # no return statement, just command
-def delete():
+def delete_student():
     student_database = 'students.csv'
     data_list = []
 
