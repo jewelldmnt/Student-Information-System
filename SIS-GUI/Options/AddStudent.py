@@ -26,7 +26,7 @@ class AddStudent(Frame):
         canvas.create_image(347.0, 664.0, image=self.curvy)
 
         # creating add student label
-        canvas.create_text(365.0, 40.0, anchor="nw", text="ADD STUDENT", fill="#FFFFFF", font=("LexendDeca Bold", 36 * -1, "underline"))
+        canvas.create_text(250.0, 40.0, anchor="nw", text="ADD STUDENT INFORMATION", fill="#FFFFFF", font=("LexendDeca Bold", 36 * -1, "underline"))
 
         # creating student number label
         canvas.create_text(437.0, 166.0-x, anchor="nw", text="Student Number", fill="#FFFFFF", font=("LexendDeca Light", 14 * -1))

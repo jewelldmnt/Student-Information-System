@@ -23,7 +23,7 @@ class ViewStudent(Frame):
         self.canvas.create_image(347.0, 664.0, image=self.curvy)
 
         # creating the view student label
-        self.canvas.create_text(385.0, 40.0, text="VIEW STUDENT", anchor="nw", fill="#FFFFFF", font=("LexendDeca Bold", 36 * -1, "underline"))
+        self.canvas.create_text(250.0, 40.0, text="VIEW STUDENT INFORMATION", anchor="nw", fill="#FFFFFF", font=("LexendDeca Bold", 36 * -1, "underline"))
 
         # creating list of student information label
         self.canvas.create_text(395.0, 106.0, text="LIST OF STUDENT INFORMATION", anchor="nw", fill="#FFFFFF", font=("LexendDeca Bold", 16 * -1))

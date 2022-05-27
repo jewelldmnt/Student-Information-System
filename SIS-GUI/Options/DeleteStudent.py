@@ -23,7 +23,7 @@ class DeleteStudent(Frame):
         canvas.create_image(347.0, 664.0, image=self.curvy)
 
         # creating the delete student label
-        canvas.create_text(330.0, 40.0, text="DELETE STUDENT", anchor="nw", fill="#FFFFFF", font=("LexendDeca Bold", 36 * -1, "underline"))
+        canvas.create_text(200.0, 40.0, text="DELETE STUDENT INFORMATION", anchor="nw", fill="#FFFFFF", font=("LexendDeca Bold", 36 * -1, "underline"))
 
         # creating search bar label
         canvas.create_text(310.0, 126.0, text="Enter the student number to search", anchor="nw", fill="#FFFFFF", font=("LexendDeca Regular", 14 * -1))

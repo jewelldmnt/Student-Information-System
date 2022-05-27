@@ -2,19 +2,20 @@
 import hashlib
 import os
 
+
 # database management for sign up
 def signup(filename, email, pwd, confirm_pwd):
     file = open(filename, "a")
     file = open(filename, "r")
 
-    # password and confirm password doesn't match
-    if pwd != confirm_pwd:
-        return 2
-
     # The email already exist!
     for line in file:
         if email in line.split(", "):
-            return 3
+            return 1
+
+    # password and confirm password doesn't match
+    if pwd != confirm_pwd:
+        return 2
 
     # You have registered successfully!
     enc = confirm_pwd.encode()
@@ -22,7 +23,8 @@ def signup(filename, email, pwd, confirm_pwd):
     file = open(filename, "a")
     file.write(f"{email}, {hash1}\n")
     file.close()
-    return 1
+    return 3
+
 
 # database management for login
 def login(filename, email, pwd):

@@ -20,7 +20,7 @@ class MainFrame(Tk):
         container.grid_rowconfigure(0, weight=1)
         container.grid_columnconfigure(0, weight=1)
 
-        # creating a dictionary of page objects and id for menu
+        # creating a dictionary for page objects
         self.frames = {}
 
         # looping in every page/class and creating an object of it

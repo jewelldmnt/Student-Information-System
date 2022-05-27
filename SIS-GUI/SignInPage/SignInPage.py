@@ -27,19 +27,19 @@ class SignInPage(Frame):
         canvas.create_image(640.0, 664.0, image=self.curvy)
 
         # creating sign in label
-        canvas.create_text(541.0, 174.0, anchor="nw", text="Sign in", fill="#FFFFFF", font=("LexendDeca Regular", 64 * -1))
+        canvas.create_text(541.0, 127.0, anchor="nw", text="Sign in", fill="#FFFFFF", font=("LexendDeca Regular", 64 * -1))
 
         # creating starting label
-        canvas.create_text(485.0, 260.0, anchor="nw", text="Sign in to start managing student information", fill="#FFFFFF", font=("LexendDeca Regular", 16 * -1))
+        canvas.create_text(485.0, 213.0, anchor="nw", text="Sign in to start managing student information", fill="#FFFFFF", font=("LexendDeca Regular", 16 * -1))
 
         # creating email label
-        canvas.create_text(490.0, 321.0, anchor="nw", text="Email", fill="#FFFFFF", font=("LexendDeca Regular", 14 * -1))
+        canvas.create_text(490.0, 249.0, anchor="nw", text="Email", fill="#FFFFFF", font=("LexendDeca Regular", 14 * -1))
 
-        # creating email entry
+        # creating email entry//
         self.imgEntry1 = PhotoImage(file=self.relative_to_assets("entry_1.png"))
-        canvas.create_image(640.0, 363.5, image=self.imgEntry1)
+        canvas.create_image(640.0, 289.0, image=self.imgEntry1)
         self.entry1 = Entry(self, bd=0, bg="#224957", highlightthickness=0, fg="silver", insertbackground="silver", font=("LexendDeca Regular", 14 * -1))
-        self.entry1.place(x=500.0, y=341.0, width=280.0, height=43.0)
+        self.entry1.place(x=500.0, y=269.0, width=280.0, height=43.0)
 
         # creating password label
         canvas.create_text(490.0, 398.0, anchor="nw", text="Password", fill="#FFFFFF", font=("LexendDeca Regular", 14 * -1))

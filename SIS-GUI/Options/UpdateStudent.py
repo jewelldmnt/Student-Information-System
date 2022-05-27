@@ -44,8 +44,7 @@ class UpdateStudent(Frame):
         btnSearch.place(x=590.0, y=132.0, width=94.0, height=38.0)
 
         # creating error message label
-        self.response = Label(self.canvas, text="Student number not found.", anchor="nw", bg="#093545", fg="#F04C41",
-                              font=("LexendDeca Regular", 14 * -1))
+        self.response = Label(self.canvas, text="Student number not found.", anchor="nw", bg="#093545", fg="#F04C41", font=("LexendDeca Regular", 14 * -1))
 
         # creating student information label
         self.lblInfo = Label(self.canvas, anchor="nw", text="STUDENT INFORMATION", bg="#093545", fg="#FFFFFF", font=("LexendDeca Regular", 18 * -1))
@@ -134,8 +133,8 @@ class UpdateStudent(Frame):
         # -------------------------- creation of confirmation part -------------------------------------------- #
 
         # creating confirmation label
-        self.lblConfirm = Label(self.frame, text="Are you sure this information is correct?", bg="#093545", fg="#FFFFFF", font=("LexendDeca Regular", 14 * -1))
-        self.lblConfirm2 = Label(self.frame, text="By choosing yes, the previously saved data would be overwritten.", bg="#093545", fg="#FFFFFF", font=("LexendDeca Regular", 14 * -1))
+        self.lblConfirm = Label(self.frame, text="Are you sure this information is correct? By choosing yes,", bg="#093545", fg="#FFFFFF", font=("LexendDeca Regular", 14 * -1))
+        self.lblConfirm2 = Label(self.frame, text="the previously saved data would be overwritten and the data you entered would be submitted.", bg="#093545", fg="#FFFFFF", font=("LexendDeca Regular", 14 * -1))
 
         # creating yes button
         self.imgYes = PhotoImage(file=self.relative_to_assets("btnYes.png"))
@@ -161,17 +160,15 @@ class UpdateStudent(Frame):
             self.lblInfo.place_forget()
 
 
-    # update student
+    # update student with the new info
     def update_student(self):
         update.update_student(self.info_index, self.new_info.get())
-        self.entryChangeInto.delete(0, END)
         self.hide_frame()
         self.search_student()
 
 
     # user clicked no, go back to changing what info again
     def enter_again(self):
-        self.entryChangeInto.delete(0, END)
         self.hide_frame()
         self.search_student()
 
@@ -196,8 +193,8 @@ class UpdateStudent(Frame):
 
         # placing confirmation part
         if new_info != "":
-            self.lblConfirm.place(x=378, y=345)
-            self.lblConfirm2.place(x=221, y=365)
+            self.lblConfirm.place(x=270, y=345)
+            self.lblConfirm2.place(x=50, y=365)
             self.btnYes.place(x=656.0, y=350.0, width=84.0, height=30.0)
             self.btnNo.place(x=753.0, y=350.0, width=84.0, height=30.0)
         # hide the confirmation part
@@ -237,6 +234,7 @@ class UpdateStudent(Frame):
     # hide frame
     def hide_frame(self):
         self.reset_button_state()
+        self.entryChangeInto.delete(0, END)
         self.lblInfo.place_forget()
         self.frame.place_forget()
         self.lblChangeInto.place_forget()
