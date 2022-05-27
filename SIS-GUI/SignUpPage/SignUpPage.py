@@ -96,24 +96,6 @@ class SignUpPage(Frame):
         btnSignIn.place(x=737.0, y=554.0, width=59.0, height=21.0)
 
 
-    # reset entry background 1 border
-    def reset_bg1_border(self, *args):
-        self.entryBg1.configure(image=self.imgEntry1)
-        self.emailResponse.configure(text="")
-
-
-    # reset entry background 2 border
-    def reset_bg2_border(self, *args):
-        self.entryBg2.configure(image=self.imgEntry1)
-        self.pwdResponse.configure(text="")
-
-
-    # reset entry background 3 border
-    def reset_bg3_border(self, *args):
-        self.entryBg3.configure(image=self.imgEntry1)
-        self.confirmResponse.configure(text="")
-
-
     # transition to the sign in page
     def to_signin(self, controller):
         self.reset_all()
@@ -170,19 +152,38 @@ class SignUpPage(Frame):
             self.response.place_configure(x=525, y=180)
 
 
-    # reset the entry backgrounds and entry responses
-    def reset_all(self):
-        self.clear_text()
-        self.emailResponse["text"] = self.pwdResponse["text"] = self.confirmResponse["text"] = ""
-        self.entryBg1["image"] = self.entryBg2["image"] = self.entryBg3["image"] = self.imgEntry1
-
-
     # clearing entry inputs
     def clear_text(self):
         self.response.place_forget()
         self.entry1.delete(0, END)
         self.entry2.delete(0, END)
         self.entry3.delete(0, END)
+
+
+    # reset entry background 1 border
+    def reset_bg1_border(self, *args):
+        self.entryBg1.configure(image=self.imgEntry1)
+        self.emailResponse.configure(text="")
+
+
+    # reset entry background 2 border
+    def reset_bg2_border(self, *args):
+        self.entryBg2.configure(image=self.imgEntry1)
+        self.pwdResponse.configure(text="")
+
+
+    # reset entry background 3 border
+    def reset_bg3_border(self, *args):
+        self.entryBg3.configure(image=self.imgEntry1)
+        self.confirmResponse.configure(text="")
+
+
+    # reset the entry backgrounds and entry responses
+    def reset_all(self):
+        self.clear_text()
+        self.reset_bg1_border()
+        self.reset_bg2_border()
+        self.reset_bg3_border()
 
 
     # for the path to be right

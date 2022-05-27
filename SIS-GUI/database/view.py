@@ -23,7 +23,7 @@ def display_students(parent):
         # loop all rows and display it
         for ind, row in enumerate(reader):
             # print the table image
-            Label(parent.table_frame, bg="#0B4D65", image=parent.imgTable).grid(row=ind, ipady=ipady)
+            Label(parent.table_frame, bg="#4F7A8A", image=parent.imgTable).grid(row=ind, ipady=ipady)
             for index, data in enumerate(row):
                 # if student number, different placement
                 if index == 0:

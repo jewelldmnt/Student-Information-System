@@ -38,11 +38,11 @@ class ViewStudent(Frame):
         total_students = view.number_of_students()
 
         # creating the main frame
-        self.main_frame = Frame(self.canvas, width=835, height=538, bg="#0B4D65")
+        self.main_frame = Frame(self.canvas, width=835, height=538, bg="#4F7A8A")
         self.main_frame.place(x=75, y=133)
 
         # creating the canvas for the scrollbar
-        self.in_canvas = Canvas(self.main_frame, width=835, height=538, bg="#0B4D65", highlightthickness=0.5, highlightbackground="black")
+        self.in_canvas = Canvas(self.main_frame, width=835, height=538, bg="#4F7A8A", highlightthickness=0)
         self.in_canvas.pack(side=LEFT, fill=BOTH, expand=True, ipadx=2)
 
         # making the scrollbar of the canvas
@@ -54,11 +54,11 @@ class ViewStudent(Frame):
         self.in_canvas.bind("<Configure>", lambda e: self.in_canvas.configure(scrollregion=self.in_canvas.bbox("all")))
 
         # making a window inside a canvas in the main frame
-        self.table_frame = Frame(self.in_canvas, width=835, height=538, bg="#0B4D65")
+        self.table_frame = Frame(self.in_canvas, width=835, height=538, bg="#4F7A8A")
         self.in_canvas.create_window((0, 0), window=self.table_frame, anchor="nw")
 
         # creating no students label
-        self.lblNone = Label(self.table_frame, anchor="nw", bg="#0B4D65", fg="#FFFFFF", font=("LexendDeca Regular", 30 * -1))
+        self.lblNone = Label(self.table_frame, anchor="nw", bg="#4F7A8A", fg="#FFFFFF", font=("LexendDeca Regular", 30 * -1))
 
         # displaying student information through loop
         self.imgTable = PhotoImage(file=self.relative_to_assets("imgTable1.png"))

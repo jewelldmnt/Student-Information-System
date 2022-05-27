@@ -47,11 +47,11 @@ def login(filename, email, pwd):
         if email in data.keys():
             # login successful
             if auth_hash == data[email]:
-                return 1
+                return 3
             # incorrect email or password
             else:
-                return 3
+                return 2
     
     # if file is empty then account does not exist
     file.close()
-    return 2
+    return 1
