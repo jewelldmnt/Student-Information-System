@@ -25,6 +25,10 @@ class AddStudent(Frame):
         self.curvy = PhotoImage(file=self.relative_to_assets("curvy.png"))
         canvas.create_image(347.0, 664.0, image=self.curvy)
 
+        # creating the logo image for design
+        self.logo = PhotoImage(file=self.relative_to_assets("imgLogo.png"))
+        canvas.create_image(928.0, 640.0, image=self.logo)
+
         # creating add student label
         canvas.create_text(250.0, 40.0, anchor="nw", text="ADD STUDENT INFORMATION", fill="#FFFFFF", font=("LexendDeca Bold", 36 * -1, "underline"))
 

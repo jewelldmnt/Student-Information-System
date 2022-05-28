@@ -1,5 +1,6 @@
 from tkinter import *
 from pathlib import Path
+from PIL import Image, ImageTk
 
 
 # Frame for the home page

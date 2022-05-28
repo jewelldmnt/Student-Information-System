@@ -45,4 +45,9 @@ class MainFrame(Tk):
 window = MainFrame()
 window.geometry("1280x720")
 window.resizable(0, 0)
+window.title("Student Information System")
+
+icon = PhotoImage(file='LOGO_no_bg.png')
+window.iconphoto(True, icon)
+
 window.mainloop()
