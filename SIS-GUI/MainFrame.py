@@ -24,8 +24,8 @@ class MainFrame(Tk):
         self.frames = {}
 
         # looping in every page/class and creating an object of it
-        # then storing the class name as the key 
-        # and the object of it as the value 
+        # then storing the class name as the key
+        # and the object of it as the value
         for f in {hp.HomePage, sup.SignUpPage, sip.SignInPage, sm.StudentMenu, am.AdminMenu}:
             page_name = f.__name__
             frame = f(container, self)
@@ -47,7 +47,6 @@ window.geometry("1280x720")
 window.resizable(0, 0)
 window.title("Student Information System")
 
-icon = PhotoImage(file='LOGO_no_bg.png')
+icon = PhotoImage(file='SIS-GUI\\LOGO_no_bg.png')
 window.iconphoto(True, icon)
-
 window.mainloop()

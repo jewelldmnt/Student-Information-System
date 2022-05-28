@@ -13,6 +13,7 @@ class AddStudent(Frame):
     def __init__(self, parent):
         Frame.__init__(self, parent)
         x = 20
+        
         # creating this frame canvas
         canvas = Canvas(self, bg="#093545", height=720, width=987, bd=0, highlightthickness=0, relief="ridge")
         canvas.place(x=0, y=0)
@@ -27,10 +28,10 @@ class AddStudent(Frame):
 
         # creating the logo image for design
         self.logo = PhotoImage(file=self.relative_to_assets("imgLogo.png"))
-        canvas.create_image(928.0, 640.0, image=self.logo)
+        canvas.create_image(500.0, 340.0, image=self.logo)
 
         # creating add student label
-        canvas.create_text(250.0, 40.0, anchor="nw", text="ADD STUDENT INFORMATION", fill="#FFFFFF", font=("LexendDeca Bold", 36 * -1, "underline"))
+        canvas.create_text(225.0, 40.0, anchor="nw", text="ADD STUDENT INFORMATION", fill="#FFFFFF", font=("LexendDeca Regular", 36 * -1, "underline bold"))
 
         # creating student number label
         canvas.create_text(437.0, 166.0-x, anchor="nw", text="Student Number", fill="#FFFFFF", font=("LexendDeca Light", 14 * -1))

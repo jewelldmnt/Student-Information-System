@@ -73,7 +73,7 @@ class AdminMenu(Frame):
         btnLogout.place(x=41.0, y=665.0, width=90.0, height=27.0)
 
         # creating SIS label
-        self.canvas.create_text(355.0, 35.0, anchor="nw", text="Student Management System",  fill="#FFFFFF", font=("LexendDeca Regular", 36 * -1))
+        self.canvas.create_text(355.0, 35.0, anchor="nw", text="Student Management System",  fill="#FFFFFF", font=("LexendDeca Regular", 36 * -1, "bold"))
 
         # creating students image bottom right
         self.imgStudents = PhotoImage(file=self.relative_to_assets("imgStudents.png"))

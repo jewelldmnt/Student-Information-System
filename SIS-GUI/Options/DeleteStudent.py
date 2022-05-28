@@ -22,8 +22,12 @@ class DeleteStudent(Frame):
         self.curvy = PhotoImage(file=self.relative_to_assets("curvy.png"))
         canvas.create_image(347.0, 664.0, image=self.curvy)
 
+        # creating the logo image for design
+        self.logo = PhotoImage(file=self.relative_to_assets("imgLogo.png"))
+        canvas.create_image(500.0, 340.0, image=self.logo)
+
         # creating the delete student label
-        canvas.create_text(200.0, 40.0, text="DELETE STUDENT INFORMATION", anchor="nw", fill="#FFFFFF", font=("LexendDeca Bold", 36 * -1, "underline"))
+        canvas.create_text(190.0, 40.0, text="DELETE STUDENT INFORMATION", anchor="nw", fill="#FFFFFF", font=("LexendDeca Regular", 36 * -1, "underline bold"))
 
         # creating search bar label
         canvas.create_text(310.0, 126.0, text="Enter the student number to search", anchor="nw", fill="#FFFFFF", font=("LexendDeca Regular", 14 * -1))
@@ -50,6 +54,10 @@ class DeleteStudent(Frame):
 
         # creating frame for the student info
         self.frame = Frame(canvas, width=835, height=347, bg="#093545")
+
+        # creating the logo image for design
+        self.logo1 = PhotoImage(file=self.relative_to_assets("imgLogo.png"))
+        Label(self.frame, image=self.logo1, bg="#093545").place(x=172.0, y=-109.0)
 
         # creating success message label
         self.successMsg = Label(self.frame, text="Student information found!", anchor="nw", bg="#093545", fg="#20DF7F", font=("LexendDeca Regular", 16 * -1))

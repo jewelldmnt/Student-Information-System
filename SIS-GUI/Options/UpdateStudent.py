@@ -22,8 +22,12 @@ class UpdateStudent(Frame):
         self.curvy = PhotoImage(file=self.relative_to_assets("curvy.png"))
         self.canvas.create_image(347.0, 664.0, image=self.curvy)
 
+        # creating the logo image for design
+        self.logo = PhotoImage(file=self.relative_to_assets("imgLogo.png"))
+        self.canvas.create_image(500.0, 340.0, image=self.logo)
+
         # creating the update student label
-        self.canvas.create_text(205.0, 40.0, text="UPDATE STUDENT INFORMATION", anchor="nw", fill="#FFFFFF", font=("LexendDeca Bold", 36 * -1, "underline"))
+        self.canvas.create_text(190.0, 40.0, text="UPDATE STUDENT INFORMATION", anchor="nw", fill="#FFFFFF", font=("LexendDeca Regular", 36 * -1, "underline bold"))
 
         # creating search bar label
         self.canvas.create_text(310.0, 106.0, text="Enter the student number to search", anchor="nw", fill="#FFFFFF", font=("LexendDeca Regular", 14 * -1))
@@ -54,9 +58,16 @@ class UpdateStudent(Frame):
         # creating frame for the student info
         self.frame = Frame(self.canvas, width=835, height=387, bg="#093545")
 
+        # creating the logo image for design
+        self.logo1 = PhotoImage(file=self.relative_to_assets("imgLogo.png"))
+        Label(self.frame, image=self.logo1, bg="#093545").place(x=172.0, y=-109.0)
+
+        # creating the logo image for design
+        self.logo1 = PhotoImage(file=self.relative_to_assets("imgLogo.png"))
+        Label(self.frame, image=self.logo1, bg="#093545").place(x=172.0, y=-109.0)
+
         # creating success message label
-        self.successMsg = Label(self.frame, text="Student information successfully updated!", anchor="nw",
-                                bg="#093545", fg="#20DF7F", font=("LexendDeca Regular", 16 * -1))
+        self.successMsg = Label(self.frame, text="Student information successfully updated!", anchor="nw", bg="#093545", fg="#20DF7F", font=("LexendDeca Regular", 16 * -1))
 
         # creating the table image
         self.imgTable = PhotoImage(file=self.relative_to_assets("imgTable.png"))
@@ -92,8 +103,7 @@ class UpdateStudent(Frame):
         # -------------------------- creation of updating info part -------------------------------------------- #
 
         # creating select the field you want to modify label
-        Label(self.frame, text="Select the field that you want to modify:",
-              bg="#093545", fg="#FFFFFF", font=("LexendDeca Regular", 16 * -1)).place(x=0, y=220)
+        Label(self.frame, text="Select the field that you want to modify:", bg="#093545", fg="#FFFFFF", font=("LexendDeca Regular", 16 * -1)).place(x=0, y=220)
 
         # creating last name button
         self.imgLastN = PhotoImage(file=self.relative_to_assets("btnLastN.png"))
